@@ -3,9 +3,7 @@ import numpy as np
 np.random.seed(42)
 
 def stepFunction(t):
-    if t >= 0:
-        return 1
-    return 0
+    return 1 if t >= 0 else 0
 
 def prediction(X, W, b):
     return stepFunction((np.matmul(X,W)+b)[0])
@@ -42,7 +40,7 @@ def trainPerceptronAlgorithm(X, y, learn_rate = 0.01, num_epochs = 25):
     b = np.random.rand(1)[0] + x_max
     # These are the solution lines that get plotted below.
     boundary_lines = []
-    for i in range(num_epochs):
+    for _ in range(num_epochs):
         # In each epoch, we apply the perceptron step.
         W, b = perceptronStep(X, y, W, b, learn_rate)
         boundary_lines.append((-W[0]/W[1], -b/W[1]))

@@ -25,5 +25,5 @@ output_frame = pd.DataFrame(outputs, columns=['Input 1', '  Input 2', '  Linear 
 if not num_wrong:
     print('Nice!  You got it all correct.\n')
 else:
-    print('You got {} wrong.  Keep trying!\n'.format(num_wrong))
+    print(f'You got {num_wrong} wrong.  Keep trying!\n')
 print(output_frame.to_string(index=False))
